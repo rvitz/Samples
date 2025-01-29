@@ -1,0 +1,14 @@
+apiVersion: api.raibagi.samples/v1alpha1
+kind: Sample
+metadata:
+  labels:
+    app.kubernetes.io/name: sample1
+    app.kubernetes.io/managed-by: kustomize
+  name: sample-sample
+spec:
+  start: 5
+  end: 7
+  replicas: 2
+  deployments:
+    - name: abc
+      namespace: default
