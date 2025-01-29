@@ -75,6 +75,7 @@ func (r *SampleReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 				return ctrl.Result{}, err
 			}
 			if deployment.Spec.Replicas != &replicas {
+				deployment.Spec.Replicas = &replicas
 				err := r.Update(ctx, deployment)
 				if err != nil {
 					return ctrl.Result{}, err
